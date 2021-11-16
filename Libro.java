@@ -32,13 +32,18 @@ public class Libro {
     }
     
     public void imprimeAutor(){
-        System.out.println("Este es el autor: " + (autor) + "este es el titulo: " +  ( titulo));
+        System.out.println("Autor: " + (autor) + ", titulo: " +  ( titulo) + ", Paginas:" + (paginas));
     }
     public void imprimeTitulo(){
-        System.out.println("Este es el autor: " + (autor) + "este es el titulo: " +  ( titulo));
+        System.out.println("Autor: " + (autor) + ", titulo: " +  ( titulo) + ", Paginas:" + (paginas));
     }
     
     public int getPaginas(){
         return paginas;
+    }
+    
+    public  String getDetalles(){
+        String informacion = "Autor: " + autor + ", titulo: " +  titulo + ", Paginas:" + paginas;
+        return informacion; 
     }
 }
