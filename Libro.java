@@ -61,19 +61,19 @@ public class Libro {
     }
     
     public void impimirDetalles(){
-        if(numeroReferencia.length() ==0){
-            numeroReferencia = "ZZZ";
-        }
-        
-        String informacion = "Autor: " + autor + ", titulo: " +  titulo + ", Paginas:" + paginas + " Su numero de referencia es " + numeroReferencia;
+        String numeroZzz = "ZZZ";
+        if(numeroReferencia.length() >0){
+             numeroZzz = numeroReferencia;
+        }    
+        String informacion = "Autor: " + autor + ", titulo: " +  titulo + ", Paginas:" + paginas + " Su numero de referencia es " + numeroZzz;
         System.out.println(informacion);
     }
     public  String getDetalles(){
-        if(numeroReferencia.length() ==0){
-            numeroReferencia = "ZZZ";
-        }
-        
-        String informacion = "Autor: " + autor + ", titulo: " +  titulo + ", Paginas:" + paginas + " Su numero de referencia es " + numeroReferencia;
+        String numeroZzz = "ZZZ";
+        if(numeroReferencia.length() >0){
+             numeroZzz = numeroReferencia;
+        } 
+        String informacion = "Autor: " + autor + ", titulo: " +  titulo + ", Paginas:" + paginas + " Su numero de referencia es " + numeroZzz;
         return informacion; 
     }
 }
