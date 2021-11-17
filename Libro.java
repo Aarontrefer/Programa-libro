@@ -44,6 +44,10 @@ public class Libro {
         return paginas;
     }
     
+    public void impimirDetalles(){
+        String informacion = "Autor: " + autor + ", titulo: " +  titulo + ", Paginas:" + paginas;
+        System.out.println(informacion);
+    }
     public  String getDetalles(){
         String informacion = "Autor: " + autor + ", titulo: " +  titulo + ", Paginas:" + paginas;
         return informacion; 
