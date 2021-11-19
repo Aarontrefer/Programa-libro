@@ -18,8 +18,7 @@ public class Libro {
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
      */
-    public Libro(String autorLibro, String tituloLibro, int numeroPaginas, String numeroDeReferencia)
-    {
+    public Libro(String autorLibro, String tituloLibro, int numeroPaginas, String numeroDeReferencia){
         autor = autorLibro;
         titulo = tituloLibro;
         paginas = numeroPaginas;
@@ -37,13 +36,11 @@ public class Libro {
         return numeroReferencia;
     }
     public void setNumeroReferencia(String referencia){
-        numeroReferencia = referencia;
-        if(numeroReferencia.length() > 2){
-            numeroReferencia = numeroReferencia;
+        if(referencia.length() > 2){
+            numeroReferencia = referencia; 
         }
         else{
-            numeroReferencia = "";
-            System.out.println("el numero de referencia e de menos de 3 digitos");
+            System.out.println("el numero de referencia es de menos de 3 digitos");
         }
     }
     
