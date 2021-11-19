@@ -15,16 +15,22 @@ public class Libro {
     private int paginas;
     private String numeroReferencia;
     private int vecesPrestado;
+    private boolean esLibroDeTexto;
 
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
      */
-    public Libro(String autorLibro, String tituloLibro, int numeroPaginas, String numeroDeReferencia){
+    public Libro(String autorLibro, String tituloLibro, int numeroPaginas, String numeroDeReferencia, boolean libroDeTexto){
         autor = autorLibro;
         titulo = tituloLibro;
         paginas = numeroPaginas;
         numeroReferencia = numeroDeReferencia;
         vecesPrestado = 0;
+        esLibroDeTexto = libroDeTexto;
+    }
+    
+    public boolean getLibroDeTexto(){
+        return esLibroDeTexto;
     }
     
     public void prestar(){
@@ -74,8 +80,15 @@ public class Libro {
         String numeroZzz = "ZZZ";
         if(numeroReferencia.length() >0){
              numeroZzz = numeroReferencia;
-        }    
-        String informacion = "Autor: " + autor + ", titulo: " +  titulo + ", Paginas:" + paginas + " Su numero de referencia es " + numeroZzz + " y lo han prestado estas veces:" + vecesPrestado;
+        }
+        String texto = "";
+        if (esLibroDeTexto == true){
+             texto = " es de texto";
+        }
+        else {
+            texto = " no es de texto";
+        }
+        String informacion = "Autor: " + autor + ", titulo: " +  titulo + ", Paginas:" + paginas + " Su numero de referencia es " + numeroZzz + " y lo han prestado estas veces:" + vecesPrestado + " y su libro " + texto;
         System.out.println(informacion);
     }
     public  String getDetalles(){
@@ -83,7 +96,14 @@ public class Libro {
         if(numeroReferencia.length() >0){
              numeroZzz = numeroReferencia;
         } 
-        String informacion = "Autor: " + autor + ", titulo: " +  titulo + ", Paginas:" + paginas + " Su numero de referencia es " + numeroZzz + " y lo han prestado estas veces:" + vecesPrestado;
+        String texto = "";
+        if (esLibroDeTexto == true){
+             texto = " es de texto";
+        }
+        else {
+            texto = " no es de texto";
+        }
+        String informacion = "Autor: " + autor + ", titulo: " +  titulo + ", Paginas:" + paginas + " Su numero de referencia es " + numeroZzz + " y lo han prestado estas veces:" + vecesPrestado + " y su libro " + texto;
         return informacion; 
     }
 }
