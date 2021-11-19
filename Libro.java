@@ -14,6 +14,7 @@ public class Libro {
     private String titulo;
     private int paginas;
     private String numeroReferencia;
+    private int vecesPrestado;
 
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
@@ -23,11 +24,21 @@ public class Libro {
         titulo = tituloLibro;
         paginas = numeroPaginas;
         numeroReferencia = numeroDeReferencia;
+        vecesPrestado = 0;
+    }
+    
+    public void prestar(){
+         vecesPrestado += 1;
+    }
+    
+    public int getVecesPrestado(){
+        return vecesPrestado;
     }
     
     public String getAutor(){
         return autor;
     }
+    
     public String getTitulo(){
         return titulo;
     }
@@ -35,6 +46,7 @@ public class Libro {
     public String getNumeroReferencia(){
         return numeroReferencia;
     }
+    
     public void setNumeroReferencia(String referencia){
         if(referencia.length() > 2){
             numeroReferencia = referencia; 
@@ -48,6 +60,7 @@ public class Libro {
         String informacion = "Autor: " + autor + ", titulo: " +  titulo + ", Paginas:" + paginas;
         System.out.println(informacion);
     }
+    
     public void imprimeTitulo(){
         String informacion = "Autor: " + autor + ", titulo: " +  titulo + ", Paginas:" + paginas + "Su numero de referencia es " + numeroReferencia;
         System.out.println(informacion);
@@ -62,7 +75,7 @@ public class Libro {
         if(numeroReferencia.length() >0){
              numeroZzz = numeroReferencia;
         }    
-        String informacion = "Autor: " + autor + ", titulo: " +  titulo + ", Paginas:" + paginas + " Su numero de referencia es " + numeroZzz;
+        String informacion = "Autor: " + autor + ", titulo: " +  titulo + ", Paginas:" + paginas + " Su numero de referencia es " + numeroZzz + " y lo han prestado estas veces:" + vecesPrestado;
         System.out.println(informacion);
     }
     public  String getDetalles(){
@@ -70,7 +83,7 @@ public class Libro {
         if(numeroReferencia.length() >0){
              numeroZzz = numeroReferencia;
         } 
-        String informacion = "Autor: " + autor + ", titulo: " +  titulo + ", Paginas:" + paginas + " Su numero de referencia es " + numeroZzz;
+        String informacion = "Autor: " + autor + ", titulo: " +  titulo + ", Paginas:" + paginas + " Su numero de referencia es " + numeroZzz + " y lo han prestado estas veces:" + vecesPrestado;
         return informacion; 
     }
 }
